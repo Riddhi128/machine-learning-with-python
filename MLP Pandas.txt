@@ -1,0 +1,222 @@
+
+
+import pandas as pd
+
+print(pd.__version__)  # checking version
+
+2.0.3
+
+
+
+a=[1,2,4,5,7]
+s1=pd.Series(a,index=["i1","i2","i3","i4","i5"])    
+print(s1)
+
+i1    1
+i2    2
+i3    4
+i4    5
+i5    7
+dtype: int64
+
+
+
+print(s1["i3"])                                 #single data for the series 
+​
+4
+
+
+
+keyVal={"AIML":4,"CCN":4,"WS":3,"CS":4}
+sKeyVal=pd.Series(keyVal)                      #create a series with key value pair
+print(sKeyVal) 
+            
+AIML    4
+CCN     4
+WS      3
+CS      4
+dtype: int64
+
+
+
+student={"subject":["aiml","ccn","ws","cs"],
+        "marks":["90","89","85","94"]}
+sstud=pd.DataFrame(student)                     #data in form of row and column
+print(sstud)
+
+  subject marks
+0    aiml    90
+1     ccn    89
+2      ws    85
+3      cs    94
+
+
+
+print(sstud.loc[0])
+                               # fatch single row (location )
+subject    aiml
+marks        90
+Name: 0, dtype: object
+
+
+
+studdata=pd.read_csv('C:\\Users\\HP\\Desktop\\p1.csv')
+print(studdata)
+
+    id      name         dob          course   per
+0  1.0    riddhi  18-03-2003           mscit  77.0
+1  2.0     mansi  25-12-2002           mscit  79.0
+2  3.0  hetashvi  14-06-2003           mscit  82.0
+3  4.0     urvil  01-09-1999           mscit  78.0
+4  5.0     keval  26-04-2002          b.tech  77.0
+5  6.0       abc  23-12-2003  cyber security   NaN
+6  NaN       NaN         NaN             NaN   NaN
+7  7.0       NaN         NaN             NaN   NaN
+
+
+
+print(studdata.tail())
+
+    id   name         dob          course   per
+3  4.0  urvil  01-09-1999           mscit  78.0
+4  5.0  keval  26-04-2002          b.tech  77.0
+5  6.0    abc  23-12-2003  cyber security   NaN
+6  NaN    NaN         NaN             NaN   NaN
+7  7.0    NaN         NaN             NaN   NaN
+
+
+
+print(studdata.head())
+
+    id      name         dob  course   per
+0  1.0    riddhi  18-03-2003   mscit  77.0
+1  2.0     mansi  25-12-2002   mscit  79.0
+2  3.0  hetashvi  14-06-2003   mscit  82.0
+3  4.0     urvil  01-09-1999   mscit  78.0
+4  5.0     keval  26-04-2002  b.tech  77.0
+
+
+
+print(studdata.loc[2])
+
+id               3.0
+name        hetashvi
+dob       14-06-2003
+course         mscit
+per             82.0
+Name: 2, dtype: object
+
+
+
+print(studdata.info())
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   id      7 non-null      float64
+ 1   name    6 non-null      object 
+ 2   dob     6 non-null      object 
+ 3   course  6 non-null      object 
+ 4   per     5 non-null      float64
+dtypes: float64(2), object(3)
+memory usage: 452.0+ bytes
+None
+
+
+
+newstuddata=studdata.dropna()
+print(newstuddata)
+
+    id      name         dob  course   per
+0  1.0    riddhi  18-03-2003   mscit  77.0
+1  2.0     mansi  25-12-2002   mscit  79.0
+2  3.0  hetashvi  14-06-2003   mscit  82.0
+3  4.0     urvil  01-09-1999   mscit  78.0
+4  5.0     keval  26-04-2002  b.tech  77.0
+
+
+
+filledstud=studdata.fillna(30)
+print(filledstud)
+
+     id      name         dob          course   per
+0   1.0    riddhi  18-03-2003           mscit  77.0
+1   2.0     mansi  25-12-2002           mscit  79.0
+2   3.0  hetashvi  14-06-2003           mscit  82.0
+3   4.0     urvil  01-09-1999           mscit  78.0
+4   5.0     keval  26-04-2002          b.tech  77.0
+5   6.0       abc  23-12-2003  cyber security  30.0
+6  30.0        30          30              30  30.0
+7   7.0        30          30              30  30.0
+
+
+
+new=studdata["course"].fillna("mca")
+print(new)
+
+0             mscit
+1             mscit
+2             mscit
+3             mscit
+4            b.tech
+5    cyber security
+6               mca
+7               mca
+Name: course, dtype: object
+
+
+
+studdata["course"].fillna("mca",inplace=True)
+print(studdata)
+
+    id      name         dob          course   per
+0  1.0    riddhi  18-03-2003           mscit  77.0
+1  2.0     mansi  25-12-2002           mscit  79.0
+2  3.0  hetashvi  14-06-2003           mscit  82.0
+3  4.0     urvil  01-09-1999           mscit  78.0
+4  5.0     keval  26-04-2002          b.tech  77.0
+5  6.0       abc  23-12-2003  cyber security   NaN
+6  NaN       NaN         NaN             mca   NaN
+7  7.0       NaN         NaN             mca   NaN
+
+
+
+studdata["per"].fillna(55,inplace=True)
+print(studdata)
+
+    id      name         dob          course   per
+0  1.0    riddhi  18-03-2003           mscit  77.0
+1  2.0     mansi  25-12-2002           mscit  79.0
+2  3.0  hetashvi  14-06-2003           mscit  82.0
+3  4.0     urvil  01-09-1999           mscit  78.0
+4  5.0     keval  26-04-2002          b.tech  77.0
+5  6.0       abc  23-12-2003  cyber security  55.0
+6  NaN       NaN         NaN             mca  55.0
+7  7.0       NaN         NaN             mca  55.0
+
+
+
+mean=studdata["per"].mean()  #find min of the data
+print(f"mean:{mean}")
+
+mean:69.75
+
+
+
+median=studdata["per"].median()    #find mesian of the data
+print("median",{median})
+
+median {77.0}
+
+
+
+mode=studdata["per"].mode()    #find mode of the data
+print(f"mode:{mode[0]}")
+
+mode:55.0
+
+
+
+​
