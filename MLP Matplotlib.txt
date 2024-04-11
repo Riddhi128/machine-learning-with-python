@@ -1,0 +1,119 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+x=np.array([5,8,15,69,80])
+y=np.array([3,9,25,37,90])
+plt.plot(x,y)
+
+[<matplotlib.lines.Line2D at 0x1f552bcd410>]
+
+
+
+x1=np.array([4,5,88,73])
+y1=np.array([9,12,44,56])
+plt.plot(x1,y1)
+plt.plot(x,y)
+
+[<matplotlib.lines.Line2D at 0x1f552cc5c10>]
+
+
+
+
+plt.plot(x,y,'o')
+
+[<matplotlib.lines.Line2D at 0x1f552d2bd10>]
+
+
+
+
+plt.plot(x,y,marker='o')
+
+[<matplotlib.lines.Line2D at 0x1f5534bf390>]
+
+
+
+
+plt.plot(x1,y1,marker="*",ms=4,mec='r',mfc='r')
+
+[<matplotlib.lines.Line2D at 0x1f5534fbed0>]
+
+
+
+
+plt.plot(x,y,linestyle='dashed')
+
+[<matplotlib.lines.Line2D at 0x1f553708d90>]
+
+
+
+
+plt.plot(x,y,linestyle='dotted')
+
+[<matplotlib.lines.Line2D at 0x1f557c73d10>]
+
+
+
+
+plt.plot(x,y,linestyle='dashdot')
+
+[<matplotlib.lines.Line2D at 0x1f557e9a390>]
+
+
+
+
+font={'size':15,'color':'b'}
+plt.title("Demo chart",fontdict=font,loc='right')
+plt.xlabel("x=axis")
+plt.xlabel("y=axis")
+plt.plot(x,y,linestyle='dashdot',color='g')
+plt.plot(x1,y1,linestyle='dashdot',color='r')
+plt.grid(axis='x')
+
+
+​
+
+font={'size':15,'color':'b'}
+plt.title("Demo chart",fontdict=font,loc='right')
+plt.xlabel("x=axis")
+plt.xlabel("y=axis")
+plt.plot(x,y,linestyle='dashdot',color='g')
+plt.plot(x1,y1,linestyle='dashdot',color='r')
+plt.grid(axis='y')
+
+
+​
+
+font={'size':15,'color':'b'}
+plt.title("Demo chart",fontdict=font,loc='right')
+plt.xlabel("x=axis")
+plt.xlabel("y=axis")
+plt.plot(x,y,linestyle='dashdot',color='g')
+plt.plot(x1,y1,linestyle='dashdot',color='r')
+plt.grid(axis='x',linestyle='-',color='b')
+
+
+​
+
+plt.subplot(1,2,1)              #one raw two column and one
+plt.plot(x,y)
+plt.subplot(1,2,2)      
+plt.plot(x1,y1)
+
+[<matplotlib.lines.Line2D at 0x1f558011010>]
+
+
+
+
+plt.subplot(1,2,1)
+plt.title("p1")
+plt.plot(x,y)
+plt.subplot(1,2,2)
+plt.title("p2")
+plt.plot(x1,y1)
+plt.suptitle("SuperTitle")
+
+Text(0.5, 0.98, 'SuperTitle')
+
+​
