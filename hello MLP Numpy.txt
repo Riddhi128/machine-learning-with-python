@@ -1,0 +1,299 @@
+hello MLP
+
+
+import numpy as np
+a=np.array([1,2,3,4])  # to creat and print array   #a=np.array([1,2,3,4]
+print(a)   
+                                         #print(a)
+[1 2 3 4]
+
+
+
+print("array :",a)#print("array :",a)
+print(f"array a(a)")#print(f"array a(a)")
+print("array a:{}".format(a))#print("array.a:{}".formate(a))  #format of array
+
+array : [1 2 3 4]
+array a(a)
+array a:[1 2 3 4]
+
+
+
+print(f"ndim:{a.ndim}")  #print min of array   # print(f"ndim:{a.ndim}")
+print(f"size:{a.size}")  # print size of array  #print(f"size:{a.size}")
+print(f"shape:{a.shape}") #print shape of aray  #print(f"shape:{a.shape}")
+print(f"stype:{a.dtype}") #print type of array   #print(f"stype:{a.dtype}")
+print(f"itemsize{a.itemsize}") #print number of element in array  #print(f"itemsize:{a.itemsize}")
+
+ndim:1
+size:4
+shape:(4,)
+stype:int32
+itemsize4
+
+
+
+b=np.array([[1,2,3],[4,5,6]])  # print array
+print(b)
+
+[[1 2 3]
+ [4 5 6]]
+
+
+
+b=np.array([4,5,6,7])  #sum of array
+c=np.add(a,b)
+print(c)
+
+[ 5  7  9 11]
+
+
+
+b=np.array([4,5,6,7])  
+c=np.multiply(a,b)  #multiplication of array
+print(c)
+
+[ 4 10 18 28]
+
+
+
+b=np.array([4,5,6,7])
+c=np.divide(a,b)  #division pf array
+print(c)
+
+[0.25       0.4        0.5        0.57142857]
+
+
+
+b=np.array([4,5,6,7])
+c=np.subtract(a,b)   #subtract of array 
+print(c)
+
+[-3 -3 -3 -3]
+
+
+
+b=np.array([4,5,6,7])
+c=np.remainder(a,b)  #remainder of array
+print(c)
+
+[1 2 3 4]
+
+
+
+b=np.array([4,5,6,7])
+c=np.absolute(a,b)   #absolute of array
+print(c)
+
+[1 2 3 4]
+
+
+
+b=np.array([4,5,6,7])
+c=np.mod(a,b)    # mod of array
+print(c)
+
+[1 2 3 4]
+
+
+
+e=np.array(['Riddhi','Urvil']) 
+print(e)
+
+['Riddhi' 'Urvil']
+
+
+
+e=np.size(['Riddhi','Urvil','Dhamat'])  #size of array
+print(e)
+
+3
+
+
+
+z=np.zeros((2,3))  #print that array conain zero
+print(z)
+
+[[0. 0. 0.]
+ [0. 0. 0.]]
+
+
+
+one=np.ones((3,3))  #print that array contain ones
+print(one)
+
+[[1. 1. 1.]
+ [1. 1. 1.]
+ [1. 1. 1.]]
+
+
+
+empty=np.empty((2,2))
+print(empty)
+
+[[0.25       0.4       ]
+ [0.5        0.57142857]]
+
+
+
+a=np.array([[2,3,5],[5,6,7]])
+print(a)
+sliced_arr=a[1,2]   # sliced the array
+print(sliced_arr)
+
+[[2 3 5]
+ [5 6 7]]
+7
+
+
+
+indexed_arr=a[[1,0],[0,1]]
+print(indexed_arr,"indexed")   #indexed of array
+[5 3] indexed
+print(a.sum())  #print the sum of element in array
+
+28
+
+
+
+a1=np.array([25,45,50])
+print(np.sqrt(a1))   # print the square root of element in array
+[5.         6.70820393 7.07106781]
+b=a+5
+print(b)  #add the array with five
+
+[[ 7  8 10]
+ [10 11 12]]
+m1=np.array([[1,2,3],[4,5,6],[7,8,9]])
+m2=np.array([[4,5,6],[7,8,9],[4,7,8]])
+
+
+
+m3=np.dot(m1,m2)     # dot use for metrix multiplication
+print(m3)            #dot use for metrix multiplication
+
+[[ 30  42  48]
+ [ 75 102 117]
+ [120 162 186]]
+
+
+
+bool=np.array([[True,True,False],[True,False,False]]) # for end operation (all)
+print("all()with axis none",np.all(bool))
+print("all()with axis=0",np.all(bool,axis=0)) #zero means column
+print("all()with axis=1",np.all(bool,axis=1))  #one means raw
+​
+all()with axis none False
+all()with axis=0 [ True False False]
+all()with axis=1 [False False]
+
+
+
+bool=np.array([[True,True,False],[True,False,False]]) # for or operation use any (any)
+print("any()with axis none",np.any(bool))
+print("any()with axis=0",np.any(bool,axis=0))
+print("any()with axis=1",np.any(bool,axis=1))
+​
+any()with axis none True
+any()with axis=0 [ True  True False]
+any()with axis=1 [ True  True]
+
+
+
+a1=np.arange(8)   #print the array and arange in sequence with given numbers
+print(a1)
+re=a1.reshape(2,4) #reshape the array
+print(re)
+
+[0 1 2 3 4 5 6 7]
+[[0 1 2 3]
+ [4 5 6 7]]
+
+
+
+print(m1)  #stack
+print(m2)
+print(m3)
+
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[4 5 6]
+ [7 8 9]
+ [4 7 8]]
+[[ 30  42  48]
+ [ 75 102 117]
+ [120 162 186]]
+
+
+
+h=np.hstack((m1,m2,m3))  #horizontal stack
+print(h)
+
+[[  1   2   3   4   5   6  30  42  48]
+ [  4   5   6   7   8   9  75 102 117]
+ [  7   8   9   4   7   8 120 162 186]]
+
+
+
+hsplit=np.hsplit(h,3)  #horizontal split
+print(hsplit)
+
+[array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]]), array([[4, 5, 6],
+       [7, 8, 9],
+       [4, 7, 8]]), array([[ 30,  42,  48],
+       [ 75, 102, 117],
+       [120, 162, 186]])]
+
+
+
+vsplit=np.vsplit(h,3)  #vertical spit
+print(vsplit)
+
+[array([[ 1,  2,  3,  4,  5,  6, 30, 42, 48]]), array([[  4,   5,   6,   7,   8,   9,  75, 102, 117]]), array([[  7,   8,   9,   4,   7,   8, 120, 162, 186]])]
+
+
+
+arr=np.array([23,34,45,67])
+print("sqrt:",np.sqrt(arr)) #returns the square root of each elemrnt
+print("Exp:",np.exp(arr))   #returns the exponentionals of each element
+print("sin:",np.sin(arr))   #returns the sin of each element
+print("cos:",np.cos(arr))   #returns the cosine of each element
+print("log:",np.log(arr))  #returns the logarithm of each element
+print("sum:",np.sum(arr))   #returns the sum total in the array
+print("std:",np.std(arr))   #returns the standard deviation in th array
+​
+sqrt: [4.79583152 5.83095189 6.70820393 8.18535277]
+Exp: [9.74480345e+09 5.83461743e+14 3.49342711e+19 1.25236317e+29]
+sin: [-0.8462204   0.52908269  0.85090352 -0.85551998]
+cos: [-0.53283302 -0.84857027  0.52532199 -0.5177698 ]
+log: [3.13549422 3.52636052 3.80666249 4.20469262]
+sum: 169
+std: 16.269219403523945
+
+
+
+print("random:{}\n".format(np.random.random(20)));  #print the random value in array
+print("rand:{}\n".format(np.random.rand(3,4)));
+print("randint:{}\n".format(np.random.randint(0,100,20)));
+print("permutation:{}\n".format(np.random.permutation(np.arange(20)))); #permutation use for combination
+
+random:[0.04231387 0.07465192 0.43425613 0.45562883 0.53465099 0.27328646
+ 0.48488032 0.88635051 0.49828689 0.38729388 0.22874579 0.166285
+ 0.75111686 0.35910996 0.8989761  0.57825821 0.79542091 0.76081447
+ 0.82625351 0.62621792]
+
+rand:[[0.84338792 0.25546442 0.14163904 0.68540301]
+ [0.733085   0.09803299 0.90036406 0.59738623]
+ [0.99600519 0.22132172 0.34184954 0.7367615 ]]
+
+randint:[60 25 95 59 34 85 22 33 19 91 68  0 65 19 28 34 71 46 30  0]
+
+permutation:[16  2 13  4  3  6  7  9 14  0 19  1 11 10 15 18 12  8  5 17]
+
+
+
+
+​
